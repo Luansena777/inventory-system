@@ -5,12 +5,14 @@ import com.inventory_system.dto.ProductDTO;
 import com.inventory_system.model.Product;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
+import org.springframework.context.annotation.Bean;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface ProductMapper {
     ProductMapper INSTANCE = Mappers.getMapper(ProductMapper.class);
 
     ProductDTO toDTO(Product p);
 
     Product toEntity(ProductCreateDTO dto);
+
 }
